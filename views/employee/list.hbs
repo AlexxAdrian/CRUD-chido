@@ -1,0 +1,28 @@
+<h3>
+    <a class="btn btn-secondary" href="/employee"><i class="fa fa-plus"></i> Agregar Empleado</a> Lista de Empleados
+</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Ciudad</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{fullName}}</td>
+            <td>{{email}}</td>
+            <td>{{mobile}}</td>
+            <td>{{city}}</td>
+            <td>
+                <a href="/employee/{{_id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/employee/delete/{{_id}}" onclick="return confirm('¿Estás seguro de eliminar este registro?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
